@@ -56,7 +56,7 @@ inline void setpos(COORD a)
 // …Ë÷√π‚±Í
 inline void setpos(int i, int j)
 {
-	COORD pos = { i, j };
+	COORD pos = { static_cast<SHORT>(i), static_cast<SHORT>(j) };
 	setpos(pos);
 }
 
@@ -123,6 +123,17 @@ inline void tab(int x, int y, state str)
 inline int _MAX(const int *a, int n)
 {
 	int max = a[0];
+	for (int i = 1; i < n; i++)
+	{
+		if (a[i] > max)
+			max = a[i];
+	}
+	return max;
+}
+
+inline __int64 _MAX(const __int64 *a, int n)
+{
+	__int64 max = a[0];
 	for (int i = 1; i < n; i++)
 	{
 		if (a[i] > max)

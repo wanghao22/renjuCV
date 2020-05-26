@@ -231,6 +231,7 @@ void AI后手()
 				}
 				catch (const std::exception& e)
 				{
+					cout << e.what() << endl;
 					finalr = draw;
 					break;
 				}
@@ -316,6 +317,7 @@ void AI先手()
 				}
 				catch (const std::exception& e)
 				{
+					cout << e.what() << endl;
 					finalr = draw;
 					break;
 				}
@@ -361,8 +363,8 @@ int main()
 	while (true)
 	{
 		//双人对战();
-		AI后手();
-		//AI先手();
+		//AI后手();
+		AI先手();
 		g_falg = false;
 		system("cls");
 		cout << "是否继续下一局？Y/N" << endl;

@@ -133,6 +133,7 @@ inline position around(position pos)
 			return r;
 		}
 	}
+	return r;
 }
 
 class Ai
@@ -146,13 +147,13 @@ public:
 	chess set_chess();
 
 private:
-	int evaluate(position pos, state color, position(*pf)(position, bool));//给出落子位置和方向移动函数，返回该落子位置在该方向上的评分
+	__int64 evaluate(position pos, state color, position(*pf)(position, bool));//给出落子位置和方向移动函数，返回该落子位置在该方向上的评分
 
-	int point(position pos, state color);//给出一个落子位置，返回该落子的得分
+	__int64 point(position pos, state color);//给出一个落子位置，返回该落子的得分
 
-	void whole_points(int points[][g_length], state color);//给定颜色 ，记录该颜色棋子下在每一处的得分
+	void whole_points(__int64 points[][g_length], state color);//给定颜色 ，记录该颜色棋子下在每一处的得分
 
-	int best_posits(const int points[][g_length], position p_s[], int& count); //给出分数数组，找出最大值对应的位置（可能不止一个），返回分数最大值
+	__int64 best_posits(const __int64 points[][g_length], position p_s[], int& count); //给出分数数组，找出最大值对应的位置（可能不止一个），返回分数最大值
 
 	chess ms;
 	const chessboard *p_bd;
